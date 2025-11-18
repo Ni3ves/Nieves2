@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedientes UATV</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #533482, #b35c6a);
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 35px;
+            text-shadow: 0 0 8px rgba(255,255,255,0.4);
+            animation: fadeDown 1s ease forwards;
+        }
+
+        /* Animación del título */
+        @keyframes fadeDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* Tarjeta glassmorphism */
+        .card {
+            background: rgba(255, 255, 255, 0.10);
+            border-radius: 20px;
+            padding: 25px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.25);
+            box-shadow: 0 0 18px rgba(0,0,0,0.20);
+            text-align: center;
+            color: #fff;
+
+            /* animación de entrada */
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.9s ease forwards;
+        }
+
+        /* pequeño retraso para que entren escalonadas */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.35s; }
+        .card:nth-child(3) { animation-delay: 0.5s; }
+        .card:nth-child(4) { animation-delay: 0.65s; }
+        .card:nth-child(5) { animation-delay: 0.8s; }
+        .card:nth-child(6) { animation-delay: 0.95s; }
+
+        /* Animación fade + slide */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid rgba(255,255,255,0.4);
+            box-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 4px 0;
+            font-size: 15px;
+        }
+
+        /* Hover efecto: subir + zoom + sombra */
+        .card:hover {
+            transform: translateY(-12px) scale(1.03);
+            transition: 0.35s ease;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .back-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: 0.3s ease;
+}
+
+/* Hover: efecto glass + elevación */
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.07);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <!-- Botón para regresar al login -->
+<div class="back-container">
+    <a href="index.html" class="back-btn">⟵ Regresar al Login</a>
+</div>
+
+
+    <h1>Expedientes UATV</h1>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="imagenes/blanca.jpg">
+            <h3>Ing.Blanca Margarita Alcaraz Espino</h3>
+            <p><b>Sexo:</b> Femenino</p>
+            <p><b>Carrera:</b> Ingeniería en Desarrollo de Software</p>
+            <p><b>Experiencia:</b> Docente universitario en Tecnologías de la Información 
+            en la Unidad Académica Tulcingo de Valle (UTIM)
+            Profesor con varios años de experiencia impartiendo clases en el TSU en 
+            Tecnologías de la Información y asi mismo en la Ingeniería en Desarrollo de Software,
+            especializada en UI(interfaz de usuario), UX(experiencia de usuario)
+            programación, bases de datos y desarrollo de software.</p>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/oscar.jpg">
+            <h3>Ing.Oscar Morales Barranco</h3>
+            <p><b>Sexo:</b> Masculino</p>
+            <p><b>Carrera:</b> Ingeniería en Desarrollo de Software</p>
+            <p><b>Experiencia:</b> Docente universitario en Tecnologías de la Información 
+            en la Unidad Académica Tulcingo de Valle (UTIM)
+            Profesor con varios años de experiencia impartiendo clases en el TSU en 
+            Tecnologías de la Información y asi mismo en la Ingeniería en Desarrollo de Software,
+            especializado en programación, bases de datos y desarrollo de software.</p>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/edwin.jpg">
+            <h3> Ing.Edwin Hernandez Vazquez</h3>
+            <p><b>Sexo:</b> Masculino</p>
+            <p><b>Carrera:</b> Ingeniería en Desarrollo de Software</p>
+            <p><b>Experiencia:</b> Docente universitario en Tecnologías de la Información 
+            en la Unidad Académica Tulcingo de Valle (UTIM)
+            Profesor con varios años de experiencia impartiendo clases en el TSU en 
+            Tecnologías de la Información y asi mismo en la Ingeniería en Desarrollo de Software,
+            especializado en programación, bases de datos y desarrollo de software.</p>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/eileen.jpg">
+            <h3>Eileen Guadalupe Manzano Moreno</h3>
+            <p><b>Sexo:</b> Femenino</p>
+            <p><b>Carrera:</b> Ingeniería en Desarrollo de Software</p>
+            <p><b>Experiencia:</b> es egresada del TSU en Tecnologias
+             de la Informacion Area y Desarrollo de Software Multiplataforma
+             y actualmente cursa la Ingeniería en Desarrollo de Software,
+             reforzando sus conocimientos en programación, bases de datos, 
+             desarrollo de paginas web y desarrollo de aplicaciones.</p>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/jesus.jpg">
+            <h3>Jesus Ramirez Bravo</h3>
+            <p><b>Sexo:</b> Masculino</p>
+            <p><b>Carrera:</b> Ingeniería en Desarrollo de Software</p>
+            <p><b>Experiencia:</b> es egresado del TSU en Tecnologias
+             de la Informacion Area y Desarrollo de Software Multiplataforma
+             y actualmente cursa la Ingeniería en Desarrollo de Software,
+             reforzando sus conocimientos en programación, bases de datos, 
+             desarrollo de paginas web y desarrollo de aplicaciones.</p>
+        </div>
+
+        <div class="card">
+            <img src="imagenes/edgar.jpg">
+            <h3>Edgar Felipe Cabañas Gutierrez</h3>
+            <p><b>Sexo:</b> Masculino</p>
+            <p><b>Carrera:</b> Ingeniería en Desarrollo de Software</p>
+            <p><b>Experiencia:</b> es egresado del TSU en Tecnologias
+             de la Informacion Area y Desarrollo de Software Multiplataforma
+             y actualmente cursa la Ingeniería en Desarrollo de Software,
+             reforzando sus conocimientos en programación, bases de datos, 
+             desarrollo de paginas web y desarrollo de aplicaciones.</p>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": {
+            "value": 0.5,
+            "random": true
+        },
+        "size": {
+            "value": 3
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 130,
+            "color": "#ffffff",
+            "opacity": 0.25,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 1.3,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out"
+        }
+    },
+    "interactivity": {
+        "events": {
+            "onhover": { "enable": true, "mode": "grab" }
+        }
+    },
+    "retina_detect": true
+});
+</script>
+</body>
+</html>
